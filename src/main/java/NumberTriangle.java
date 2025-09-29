@@ -119,7 +119,6 @@ public class NumberTriangle {
 
         NumberTriangle[] prev_line = null;
         NumberTriangle[] row;
-        // TODO define any variables that you want to use to store things
 
         // will need to return the top of the NumberTriangle,
         // so might want a variable for that.
@@ -130,13 +129,12 @@ public class NumberTriangle {
             // remove when done; this line is included so running starter code prints the contents of the file
             System.out.println(line);
 
-            // TODO process the line
             String[] split_line = line.split(" ");
             row = new NumberTriangle[split_line.length];
             for (int i = 0; i < split_line.length; i++) {
                 row[i] = new NumberTriangle(Integer.parseInt(split_line[i]));
             }
-            if (row.length == 1) {
+            if (row.length == 1 || prev_line == null) {
                 top = row[0];
             } else {
                 for (int i = 0; i < row.length - 1; i++) {
